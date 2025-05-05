@@ -26,3 +26,12 @@ def test_db_connection():
             print("✅ Connected to the PostgreSQL database")
     except Exception as e:
         print("❌ Failed to connect to the database:", e)
+
+# Load sensitive configs
+jwt_secret = os.getenv("JWT_SECRET")
+stripe_key = os.getenv("STRIPE_KEY")
+
+if not jwt_secret:
+    print("⚠️ JWT_SECRET not set.")
+if not stripe_key:
+    print("⚠️ STRIPE_KEY not set.")
