@@ -25,3 +25,8 @@ if not config.JWT_SECRET:
     print("⚠️ JWT_SECRET not set.")
 if not config.STRIPE_KEY:
     print("⚠️ STRIPE_KEY not set.")
+
+# ✅ Add this route to test proxy from frontend
+@app.get("/api/test")
+def test_proxy():
+    return {"message": "Proxy is working!"}
